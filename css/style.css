@@ -1,0 +1,191 @@
+/* © Victor Loots, 2022
+/*
+/* Fonts */
+
+@font-face {
+  font-family: 'lucky_luke_regular';
+  src: url('../fonts/lucky_luke-webfont.eot');
+  src: url('../fonts/lucky_luke-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/lucky_luke-webfont.woff2') format('woff2'),
+    url('../fonts/lucky_luke-webfont.woff') format('woff'),
+    url('../fonts/lucky_luke-webfont.ttf') format('truetype'),
+    url('../fonts/lucky_luke-webfont.svg#lucky_luke_regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'sf_cartoonist_handregular';
+  src: url('../fonts/sf_cartoonist_hand-webfont.eot');
+  src: url('../fonts/sf_cartoonist_hand-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/sf_cartoonist_hand-webfont.woff2') format('woff2'),
+    url('../fonts/sf_cartoonist_hand-webfont.woff') format('woff'),
+    url('../fonts/sf_cartoonist_hand-webfont.ttf') format('truetype'),
+    url('../fonts/sf_cartoonist_hand-webfont.svg#sf_cartoonist_handregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/*
+/* Variabelen */
+:root {
+  --font_titel: "lucky_luke_regular", Georgia, serif;
+  --font-brood: "sf_cartoonist_handregular", Verdana, sans-serif;
+  --kleur_wit: #fdfbfc;
+  --kleur_zwart: #2b211c;
+  --kleur_geel: #ebd754;
+  --kleur_rood: #b20d14;
+}
+
+/* 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+/* Standards */
+body {
+  min-height: 100%;
+  color: var(--kleur_zwart);
+  background-color: var(--kleur_wit);
+  font-family: var(--font-brood);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#container {
+  padding: 2vh;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: var(--kleur_geel) url(../img/bullet_hole_1.png) center left no-repeat;
+}
+
+h1 {
+  font-family: var(--font_titel);
+  font-weight: 900;
+  font-size: 8rem;
+  text-align: center;
+}
+
+.columns {
+  columns: 3;
+  padding: 1rem;
+  margin: 5rem 0;
+}
+
+.columns .item, .columns p {
+  break-inside: avoid;
+}
+.columns h2, .grid h3{
+  font-family: var(--font_titel);
+  color: var(--kleur_rood);
+  padding: 0 0 1rem 0;
+}
+.columns p{
+  padding: 1rem 0;
+}
+.columns p:nth-of-type(2), .columns p:nth-of-type(3){
+  text-indent: 1rem;
+}
+
+.grid_title{
+  display: block;
+  width: 100%;
+  background: var(--kleur_geel) url(../img/bullet_hole_2.png) bottom right no-repeat;
+  text-align: center;
+  padding: 2rem;
+}
+.grid_title h2{
+  font-family: var(--font_titel);
+  color: var(--kleur_zwart);
+  font-size: 4rem;
+
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+
+.joe{
+  grid-area: 2/1/2/2;
+  
+}
+
+.jack{
+  grid-area: 2/2/2/3;
+ 
+
+}
+.william{
+  grid-area: 2/3/2/4;
+  
+}
+.avarell{
+  grid-area: 2/4/2/5;
+ 
+}
+
+.bg{
+  width: 100%;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.bg_luke{
+  background-image: url(../img/luke.jpg);
+}
+.bg_jolly{
+  background-image: url(../img/Jolly.jpg);
+}
+.bg_dog{
+  background-image: url(../img/rantanplan.jpg);
+}
+.bg_joe{
+  background-image: url(../img/Joe.jpg);
+}
+.bg_jack{
+  background-image: url(../img/Jack.jpg);
+}
+.bg_william{
+  background-image: url(../img/william.jpg);
+}
+.bg_avarell{
+  background-image: url(../img/averell.jpg);
+}
+.dropcap {
+  font-family: var(--font_titel);
+  float: left;
+  font-size: 5rem;
+  line-height: 0.5;
+  padding: 2rem 1rem 0.5rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background:  url(../img/bullet_hole_2.png) center center no-repeat;
+}
+
+@media (min-width: 750px) {
+  #container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+  }
+}
