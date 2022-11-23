@@ -62,112 +62,158 @@ body {
 }
 
 #container {
+  width: 100%;
   padding: 2vh;
 }
 
+#my_nav {
+  position: sticky;
+  top: 0;
+  right: 0;
+
+}
+
+#menu_button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: block;
+  font-size: 2rem;
+}
+.menu_button_color{
+  color: var(--kleur_wit);
+}
+#menu_button:hover{
+  cursor: pointer;
+
+}
+
+#nav_links {
+  background-color: var(--kleur_rood);
+}
+
+#nav_links ul{
+  list-style-image: url(../img/star.png);
+  padding-left: 4rem;
+}
+#nav_links a {
+  color: var(--kleur_wit);
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: var(--font_titel);
+  letter-spacing: 2px;
+  padding: 1rem;
+
+}
+
+#nav_links a:hover{
+  cursor: pointer;
+  background-color: #2b211c;
+}
+
+
+
+
+
 header {
+  background: var(--kleur_geel) url(../img/bullet_hole_1.png) 10% 10% no-repeat;
+}
+
+.header_banner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background: var(--kleur_geel) url(../img/bullet_hole_1.png) center left no-repeat;
 }
+
 
 h1 {
   font-family: var(--font_titel);
   font-weight: 900;
   font-size: 8rem;
+  letter-spacing: 5px;
   text-align: center;
 }
 
 .columns {
-  columns: 3;
+  columns: 1;
   padding: 1rem;
   margin: 5rem 0;
 }
 
-.columns .item, .columns p {
+.columns .item,
+.columns p {
   break-inside: avoid;
 }
-.columns h2, .grid h3{
+
+.columns h2,
+.grid h3 {
   font-family: var(--font_titel);
+  letter-spacing: 3px;
   color: var(--kleur_rood);
   padding: 0 0 1rem 0;
 }
-.columns p{
+
+p {
   padding: 1rem 0;
 }
-.columns p:nth-of-type(2), .columns p:nth-of-type(3){
+
+.indent {
   text-indent: 1rem;
 }
 
-.grid_title{
+.grid_title {
   display: block;
   width: 100%;
-  background: var(--kleur_geel) url(../img/bullet_hole_2.png) bottom right no-repeat;
+  background: var(--kleur_geel) url(../img/bullet_hole_2.png) 95% 85% no-repeat;
   text-align: center;
   padding: 2rem;
 }
-.grid_title h2{
+
+.grid_title h2 {
   font-family: var(--font_titel);
+  letter-spacing: 3px;
   color: var(--kleur_zwart);
   font-size: 4rem;
 
 }
-.grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.5rem;
-  margin: 1rem;
-}
 
 
-.joe{
-  grid-area: 2/1/2/2;
-  
-}
-
-.jack{
-  grid-area: 2/2/2/3;
- 
-
-}
-.william{
-  grid-area: 2/3/2/4;
-  
-}
-.avarell{
-  grid-area: 2/4/2/5;
- 
-}
-
-.bg{
+.bg {
   width: 100%;
   min-height: 250px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
-.bg_luke{
+
+.bg_luke {
   background-image: url(../img/luke.jpg);
 }
-.bg_jolly{
+
+.bg_jolly {
   background-image: url(../img/Jolly.jpg);
 }
-.bg_dog{
+
+.bg_dog {
   background-image: url(../img/rantanplan.jpg);
 }
-.bg_joe{
+
+.bg_joe {
   background-image: url(../img/Joe.jpg);
 }
-.bg_jack{
+
+.bg_jack {
   background-image: url(../img/Jack.jpg);
 }
-.bg_william{
+
+.bg_william {
   background-image: url(../img/william.jpg);
 }
-.bg_avarell{
+
+.bg_avarell {
   background-image: url(../img/averell.jpg);
 }
+
 .dropcap {
   font-family: var(--font_titel);
   float: left;
@@ -182,13 +228,100 @@ footer {
   padding-top: 3rem;
   display: flex;
   justify-content: space-around;
-  background:  url(../img/bullet_hole_3.png) center center no-repeat;
+  background: url(../img/bullet_hole_3.png) center center no-repeat;
 }
 
-@media (min-width: 750px) {
+@media (max-width:620px){
+  .nav_links_hidden {
+    display: none;
+
+  }
+  #nav_links a {
+    display: block;
+  }
+  
+}
+@media (min-width: 620px) {
+  #container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  .columns {
+    columns: 2;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+  }
+
+
+  .joe {
+    grid-area: 2/1/2/2;
+
+  }
+
+  .jack {
+    grid-area: 2/2/2/3;
+
+
+  }
+
+  .william {
+    grid-area: 3/1/3/2;
+
+  }
+
+  .avarell {
+    grid-area: 3/2/3/3;
+
+  }
+}
+
+@media (min-width: 960px) {
   #container {
     margin: 0 auto;
     width: 80%;
     max-width: 1200px;
+  }
+  #nav_links li{
+    display: inline;
+  
+  }
+
+  .columns {
+    columns: 3;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+
+  .joe {
+    grid-area: 2/1/2/2;
+
+  }
+
+  .jack {
+    grid-area: 2/2/2/3;
+
+
+  }
+
+  .william {
+    grid-area: 2/3/2/4;
+
+  }
+
+  .avarell {
+    grid-area: 2/4/2/5;
+
   }
 }
