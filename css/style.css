@@ -79,6 +79,7 @@ body {
   right: 5px;
   display: block;
   font-size: 2rem;
+  line-height: 1;
 }
 .menu_button_color{
   color: var(--kleur_wit);
@@ -92,11 +93,8 @@ body {
   background-color: var(--kleur_rood);
 }
 
-#nav_links ul{
-  list-style-image: url(../img/star.png);
-  padding-left: 4rem;
-}
 #nav_links a {
+  max-width: 300px;
   color: var(--kleur_wit);
   text-decoration: none;
   font-size: 2rem;
@@ -108,12 +106,8 @@ body {
 
 #nav_links a:hover{
   cursor: pointer;
-  background-color: #2b211c;
+  color: var(--kleur_zwart);
 }
-
-
-
-
 
 header {
   background: var(--kleur_geel) url(../img/bullet_hole_1.png) 10% 10% no-repeat;
@@ -234,7 +228,6 @@ footer {
 @media (max-width:620px){
   .nav_links_hidden {
     display: none;
-
   }
   #nav_links a {
     display: block;
@@ -246,6 +239,14 @@ footer {
     width: 90%;
     margin: 0 auto;
   }
+  .nav_links_hidden {
+    display: none;
+  }
+  #nav_links a {
+    display: block;
+  }
+
+
 
 
   .columns {
@@ -288,10 +289,27 @@ footer {
     width: 80%;
     max-width: 1200px;
   }
-  #nav_links li{
-    display: inline;
+  #my_nav {
+   position: relative;
   
   }
+  #menu_button{
+    display: none;
+  }
+  #nav_links{
+    display: flex;
+    justify-content: space-between;
+  }
+  #nav_links ul{
+    padding-left: 0;
+  }
+  #nav_links li{
+    display: inline;
+  }
+  .links_hidden{
+    display: none;
+  }
+  
 
   .columns {
     columns: 3;
