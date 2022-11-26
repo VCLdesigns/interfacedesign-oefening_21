@@ -44,14 +44,26 @@
 
 /* 
 /* Reset */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: none;
 }
+
+img {
+  display: block;
+}
+
 
 /*
 /* Standards */
+html {
+  font-size: 62.5; /* (62.5/100) * 16px = 10px */
+  scroll-behavior: smooth;
+}
 body {
   min-height: 100%;
   color: var(--kleur_zwart);
@@ -64,33 +76,46 @@ body {
 #container {
   width: 100%;
   padding: 2vh;
+  position: relative;
 }
 
 #my_nav {
   position: sticky;
   top: 0;
   right: 0;
-
 }
 
 #menu_button {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  color: var(--kleur_zwart);
+  top: 3vh;
+  right: 3vh;
   display: block;
   font-size: 2rem;
   line-height: 1;
+  z-index: 1;
 }
-.menu_button_color{
-  color: var(--kleur_wit);
-}
-#menu_button:hover{
+
+#menu_button:hover {
   cursor: pointer;
 
 }
 
-#nav_links {
+#nav_links{
+  position: relative;
   background-color: var(--kleur_rood);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#nav_links ul {
+  padding: 5rem 0 0 5rem;
+  list-style-image: url(../img/star.png);
+}
+
+#nav_links li {
+  padding: 2.5rem 0;
 }
 
 #nav_links a {
@@ -104,13 +129,61 @@ body {
 
 }
 
-#nav_links a:hover{
+#nav_links a:hover {
   cursor: pointer;
   color: var(--kleur_zwart);
 }
+.tumbleweed{
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  transition: all 0.2s linear;
+  animation: jumping 1.5s infinite, rolling 5s linear infinite, rotating 2s linear infinite;
+}
+@keyframes jumping {
+  0% {
+      bottom: 2rem;
+      animation-timing-function: ease-in;
+  }
+  25% {
+    bottom: 4rem;
+      animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 2rem;
+      animation-timing-function: ease-in;
+  }
+  75% {
+    bottom: 4rem;
+      animation-timing-function: ease-out;
+  }
+  100% {
+      bottom: 2rem;
+      animation-timing-function: ease-in;
+  }
+}
+
+@keyframes rolling {
+  0% {
+      left: -5rem;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+@keyframes rotating {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 
 header {
-  background: var(--kleur_geel) url(../img/bullet_hole_1.png) 10% 10% no-repeat;
+  background: var(--kleur_geel) url(../img/bullet_hole_1.png) 5% 10% no-repeat;
 }
 
 .header_banner {
@@ -158,7 +231,7 @@ p {
 .grid_title {
   display: block;
   width: 100%;
-  background: var(--kleur_geel) url(../img/bullet_hole_2.png) 95% 85% no-repeat;
+  background: var(--kleur_geel) url(../img/bullet_hole_2.png) 95% 5% no-repeat;
   text-align: center;
   padding: 2rem;
 }
@@ -225,27 +298,29 @@ footer {
   background: url(../img/bullet_hole_3.png) center center no-repeat;
 }
 
-@media (max-width:620px){
+@media (max-width:620px) {
   .nav_links_hidden {
     display: none;
   }
+
   #nav_links a {
     display: block;
   }
-  
+
 }
+
 @media (min-width: 620px) {
   #container {
     width: 90%;
     margin: 0 auto;
   }
+
   .nav_links_hidden {
     display: none;
   }
-  #nav_links a {
-    display: block;
-  }
-
+#my_nav{
+  position: relative;
+}
 
 
 
@@ -289,27 +364,39 @@ footer {
     width: 80%;
     max-width: 1200px;
   }
+
   #my_nav {
-   position: relative;
-  
-  }
-  #menu_button{
-    display: none;
+    position: relative;
   }
   #nav_links{
-    display: flex;
-    justify-content: space-between;
+    height: 100px;
+    
   }
-  #nav_links ul{
-    padding-left: 0;
-  }
-  #nav_links li{
-    display: inline;
-  }
-  .links_hidden{
-    display: none;
+  #nav_links ul {
+    padding: 2rem 0;
+    list-style-image: url(../img/star.png);
   }
   
+  #nav_links li {
+    padding: 2.5rem 0;
+  }
+
+  #menu_button {
+    display: none;
+  }
+
+
+  #nav_links li {
+    display: inline;
+  }
+  .nav_links_hidden{
+    display: block;
+  }
+
+  .tumbleweed{
+    display: none;
+  }
+
 
   .columns {
     columns: 3;

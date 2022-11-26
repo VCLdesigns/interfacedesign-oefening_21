@@ -1,13 +1,14 @@
-var menuButton = document.getElementById("menu_button");
-var myTopNav = document.getElementById("nav_links");
+var menuButton = document.querySelector("#menu_button");
+var menuLinks = document.querySelector("#nav_links");
 
-menuButton.addEventListener("click", openCloseMenu);
 
-function openCloseMenu() {
 
-    menuButton.classList.toggle("menu_button_color");
-    myTopNav.classList.toggle("nav_links_hidden");
+menuButton.addEventListener("click", openOrClose);
+function openOrClose(evt) {
+    menuLinks.classList.toggle("nav_links_hidden");
+    if (menuButton.style.color === ("var(--kleur_wit)")) {
+        menuButton.style.color = "var(--kleur_zwart)"
+    } else { menuButton.style.color = "var(--kleur_wit)" }
+   
+
 }
-
-
-
